@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Parallel Bible">
+<meta name="theme-color" content="#F2F3F6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121419" media="(prefers-color-scheme: dark)">
+<title>Parallel Bible</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="m.css">
+</head>
+<body>
+<header id="hd">
+  <div class="hrow">
+    <button class="ib" id="prev" aria-label="이전 장"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <button id="where" aria-label="책과 장 고르기"><b id="whereT">창세기 1장</b><small id="whereS">Genesis 1</small></button>
+    <button class="ib" id="next" aria-label="다음 장"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+    <button class="ib" id="srchBtn" aria-label="검색"><svg viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L20 20"/></svg></button>
+  </div>
+  <div id="legend"></div>
+</header>
+
+<main id="list" aria-live="polite"></main>
+
+<div id="vbar" hidden></div>
+
+<nav id="tab">
+  <button data-tab="play"><svg viewBox="0 0 24 24"><path class="f" d="M8 5v14l11-7z"/></svg><span>듣기</span></button>
+  <button data-tab="type"><svg viewBox="0 0 24 24"><text x="3" y="18" font-size="15" font-family="Georgia" class="f">Aa</text></svg><span>글자</span></button>
+  <button data-tab="vers"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg><span>번역</span></button>
+  <button data-tab="more"><svg viewBox="0 0 24 24"><path d="M5 7h14M5 12h14M5 17h14"/></svg><span>백업</span></button>
+</nav>
+
+<div id="player" hidden></div>
+<div id="scrim" hidden></div>
+<section id="sheet" hidden role="dialog" aria-modal="true"><div class="grab"></div><div id="sheetBody"></div></section>
+<div id="toast" hidden></div>
+
+<script src="lib/jszip.min.js"></script>
+<script src="canon.js"></script>
+<script src="furigana.js"></script>
+<script src="m.js"></script>
+</body>
+</html>
